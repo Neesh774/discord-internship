@@ -1,0 +1,162 @@
+.bg-parent {
+  display: flex;
+  flex: 1 0 auto;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #36393f;
+  flex-direction: column;
+}
+
+.bg-parent p {
+  text-align: center;
+}
+
+.rip-image {
+  width: 20%;
+  height: 20%;
+  object-fit: cover;
+}
+
+.parent {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.chat {
+  background-color: #36393f;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.discord-messages {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  border: none;
+  overflow-y: auto;
+}
+
+span {
+  word-wrap: normal;
+}
+
+.footer {
+  background-color: #36393f;
+  margin-top: 16px;
+  margin-bottom: 36px;
+  position: relative;
+  height: 60px;
+}
+
+.disabled {
+  cursor: not-allowed;
+  background-color: #3b3e45;
+  margin: 0 16px;
+  padding: 11px 16px;
+  height: 25px;
+  font-size: 1rem;
+  align-items: center;
+  display: flex;
+  border-radius: 8px;
+}
+
+.disabled span {
+  opacity: 0.5;
+  color: #72767d;
+}
+
+.typing {
+  position: relative;
+  padding: 10px;
+  border-radius: 20px;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.typing_dot {
+  float: left;
+  width: 8px;
+  height: 8px;
+  margin: 0 2px;
+  border-radius: 50%;
+  animation: loadingFade 1s infinite;
+}
+
+.typing_dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing_dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing_dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loadingFade {
+  0% {
+    opacity: 0.4;
+    background: #8d8c91;
+  }
+  50% {
+    opacity: 1;
+    background: #fff;
+  }
+  100% {
+    opacity: 0.4;
+    background: #8d8c91;
+  }
+}
+
+.channel-header {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+}
+
+.channel-header .icon {
+  border-radius: 50%;
+  height: 68px;
+  width: 68px;
+  background-color: #4f545c;
+  background-image: url(/public/channel-icon.svg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.channel-header h1 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.channel-header span {
+  color: #b9bbbe;
+}
+
+.divider {
+  color: #72767d;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: thin solid hsla(0, 0%, 100%, 0.06);
+  height: 0;
+  flex: 0 0 auto;
+  z-index: 1;
+  margin: 1.5rem 1rem 0.5rem;
+  font-weight: bold;
+}
+
+.divider span {
+  margin-left: 1rem;
+  margin-right: .875rem;
+}
