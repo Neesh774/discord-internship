@@ -19,26 +19,54 @@
 }
 
 .parent {
-  position: absolute;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  flex: 1 1 auto;
+  height: 100vh;
   width: 100%;
-  bottom: 0;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 .chat {
   background-color: #36393f;
   display: flex;
-  flex: 1 0 auto;
-  flex-direction: column;
-  overflow-y: auto;
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  z-index: 0;
+}
+
+.scroller {
+  overflow: hidden scroll;
+  padding-right: 0px;
+  flex: 1 1 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-anchor: none;
 }
 
 .discord-messages {
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: column;
   border: none;
-  overflow-y: auto;
+  overflow-anchor: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  min-height: 100%;
+  display: flex;
+  position: relative;
 }
 
 span {
@@ -48,9 +76,9 @@ span {
 .footer {
   background-color: #36393f;
   margin-top: 16px;
-  margin-bottom: 36px;
-  position: relative;
+  margin-bottom: 12px;
   height: 60px;
+  position: relative;
 }
 
 .disabled {
@@ -72,13 +100,13 @@ span {
 
 .typing {
   position: relative;
-  padding: 10px;
+  padding: 2px 10px;
   border-radius: 20px;
   margin-left: 5px;
   display: flex;
   align-items: center;
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .typing_dot {
@@ -121,6 +149,8 @@ span {
   display: flex;
   flex-direction: column;
   margin-left: 16px;
+  margin-top: 32px;
+  flex: 0 0 auto;
 }
 
 .channel-header .icon {
@@ -151,12 +181,20 @@ span {
   border-top: thin solid hsla(0, 0%, 100%, 0.06);
   height: 0;
   flex: 0 0 auto;
-  z-index: 1;
   margin: 1.5rem 1rem 0.5rem;
   font-weight: bold;
+  z-index: 1;
+  outline: 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: 1rem;
+  margin-right: 0.875rem;
 }
 
 .divider span {
-  margin-left: 1rem;
-  margin-right: .875rem;
+  display: block;
+  flex: 0 0 auto;
+  padding: 2px 4px;
+  background: #36393f;
 }

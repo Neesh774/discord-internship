@@ -59,48 +59,50 @@ export default function App() {
       {!error ? (
         <div className="parent">
           <div className="chat">
-            <div className="channel-header">
-              <div className="icon" />
-              <h1>Welcome to #discord-application!</h1>
-              <span>
-                This is the start of the #discord-application channel.
-              </span>
-            </div>
-            {sent.length > 0 && (
-              <div className="divider">
-                <span>{parseDate()}</span>
-              </div>
-            )}
-            <DiscordMessages>
-              {sent.map((message, index) => (
-                <NeeshMessage
-                  content={message}
-                  profile={user}
-                  key={index}
-                  last={index === messages.length - 1}
-                />
-              ))}
-            </DiscordMessages>
-          </div>
-          <div className="footer">
-              <div className="disabled">
-                <span>
-                  You do not have permission to send messages in this channel.
-                </span>
-              </div>
-              {typing ? (
-                <div className="typing">
-                  <div className="typing_dot"></div>
-                  <div className="typing_dot"></div>
-                  <div className="typing_dot"></div>
+            <div className="scroller" role="group" tabindex="-1">
+              <DiscordMessages>
+                <div className="channel-header">
+                  <div className="icon" />
+                  <h1>Welcome to #discord-application!</h1>
                   <span>
-                    <b>{user.username}</b> is typing...
+                    This is the start of the #discord-application channel.
                   </span>
                 </div>
-              ) : (
-                ""
-              )}
+                {sent.length > 0 && (
+                  <div className="divider">
+                    <span>{parseDate()}</span>
+                  </div>
+                )}
+                {sent.map((message, index) => (
+                  <NeeshMessage
+                    content={message}
+                    profile={user}
+                    key={index}
+                    last={index === messages.length - 1}
+                  />
+                ))}
+              </DiscordMessages>
             </div>
+          </div>
+          <div className="footer">
+            <div className="disabled">
+              <span>
+                You do not have permission to send messages in this channel.
+              </span>
+            </div>
+            {typing ? (
+              <div className="typing">
+                <div className="typing_dot"></div>
+                <div className="typing_dot"></div>
+                <div className="typing_dot"></div>
+                <span>
+                  <b>{user.username}</b> is typing...
+                </span>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       ) : (
         <div className="rip-parent">
@@ -138,8 +140,8 @@ const NeeshMessage = ({ profile, content, last }) => {
                 var link = document.createElement("a");
                 // If you don't know the name or want to use
                 // the webserver default set name = ''
-                link.setAttribute("download", 'Kanishq\'s_Cover_Letter.pdf');
-                link.href = '/Discord_Internship_Cover_Letter.pdf';
+                link.setAttribute("download", "Kanishq's_Cover_Letter.pdf");
+                link.href = "/Discord_Internship_Cover_Letter.pdf";
                 document.body.appendChild(link);
                 link.click();
                 link.remove();
