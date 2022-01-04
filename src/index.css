@@ -61,4 +61,5 @@ body {
   overflow-y: auto;
   width: 100%;
   height: 100%;
+  scrollbar-color: #202225 #2f3136;
 }

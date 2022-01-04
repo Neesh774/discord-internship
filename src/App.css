@@ -35,16 +35,13 @@
   display: flex;
   position: relative;
   flex: 1 1 auto;
-  min-height: 0;
-  min-width: 0;
-  z-index: 0;
 }
 
 .scroller {
-  overflow: hidden scroll;
-  padding-right: 0px;
+  overflow: hidden auto;
   flex: 1 1 auto;
   position: absolute;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -53,20 +50,12 @@
 
 .discord-messages {
   border: none;
-  overflow-anchor: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
   min-height: 100%;
   display: flex;
   position: relative;
+  overflow-anchor: none;
 }
 
 span {
@@ -197,4 +186,43 @@ span {
   flex: 0 0 auto;
   padding: 2px 4px;
   background: #36393f;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.overlay button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #2f3136;
+  border: none;
+  box-shadow: 0 0 0 1px rgba(4, 4, 5, 0.15);
+  cursor: pointer;
+}
+
+.overlay button:hover:not(.disabled-button) {
+  background-color: #3a3e44;
+}
+
+.overlay svg {
+  fill: #b9bbbe;
+  width: 2rem;
+  height: 2rem;
+}
+
+.overlay .disabled-button {
+  cursor: not-allowed;
+  background-color: #4f545c;
 }
