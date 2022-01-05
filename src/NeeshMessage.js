@@ -12,7 +12,7 @@ import highlight from "highlight.js";
 import "highlight.js/styles/base16/solarized-dark.css";
 import { useEffect } from "react";
 const URL_REGEX =
-  /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+  /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/;
 const renderText = (txt) =>
   txt.startsWith("code") ? (
     <code
