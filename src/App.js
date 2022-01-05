@@ -1,10 +1,6 @@
 import "./App.css";
 import {
   DiscordMessages,
-  DiscordMessage,
-  DiscordAttachments,
-  DiscordActionRow,
-  DiscordButton,
   DiscordSystemMessage,
 } from "@skyra/discord-components-react";
 import { useEffect, useState } from "react";
