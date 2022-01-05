@@ -226,3 +226,7 @@ span {
   cursor: not-allowed;
   background-color: #4f545c;
 }
+
+.code .discord-message-markup {
+  display: flex;
+}

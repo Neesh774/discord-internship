@@ -9,6 +9,7 @@ import {
 } from "@skyra/discord-components-react";
 import { useEffect, useState } from "react";
 import messages from "./messages.json";
+import { NeeshMessage } from "./NeeshMessage";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -187,9 +188,9 @@ export default function App() {
               fill="currentColor"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           ) : speed === 1 ? (
@@ -199,9 +200,9 @@ export default function App() {
               fill="currentColor"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           ) : (
@@ -211,14 +212,14 @@ export default function App() {
               fill="currentColor"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           )}
@@ -228,52 +229,6 @@ export default function App() {
   );
 }
 
-const NeeshMessage = ({ profile, content, last }) => {
-  if (!profile || !content) {
-    return;
-  }
-  return (
-    <DiscordMessage
-      author={profile.username}
-      avatar={profile.avatar}
-      roleColor="#2ecc71"
-    >
-      {renderText(content)}
-      {last ? (
-        <DiscordAttachments>
-          <DiscordActionRow>
-            <DiscordButton
-              type="primary"
-              onClick={() => {
-                var link = document.createElement("a");
-                // If you don't know the name or want to use
-                // the webserver default set name = ''
-                link.setAttribute("download", "Kanishq's_Cover_Letter.pdf");
-                link.href = "/Discord_Internship_Cover_Letter.pdf";
-                document.body.appendChild(link);
-                link.click();
-                link.remove();
-              }}
-            >
-              Download Cover Letter
-            </DiscordButton>
-            <DiscordButton url="https://neesh.ilioslabs.dev/resume">
-              Resume
-            </DiscordButton>
-            <DiscordButton url="https://github.com/Neesh774">
-              Github
-            </DiscordButton>
-            <DiscordButton url="https://www.linkedin.com/in/kanishqk/">
-              LinkedIn
-            </DiscordButton>
-          </DiscordActionRow>
-        </DiscordAttachments>
-      ) : (
-        ""
-      )}
-    </DiscordMessage>
-  );
-};
 
 const monthNames = [
   "January",
@@ -296,13 +251,3 @@ const parseDate = () => {
     monthNames[date.getMonth()]
   } ${date.getDate()}, ${date.getFullYear()}`;
 };
-
-const URL_REGEX =
-  /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
-
-const renderText = (txt) =>
-  txt
-    .split(" ")
-    .map((part) =>
-      URL_REGEX.test(part) ? <a href={part}>{part} </a> : part + " "
-    );

@@ -8,9 +8,60 @@
     "Now, that might not be too impressive on its own but I've taught them all to myself using online courses and creating projects to jump right into the language, which you can see on my Github.",
     "I love solving difficult problems and overcoming those kinds of obstacles in my projects",
     "I'm also a team worker. I hate working on things alone and I'm always looking for feedback or criticism from others so I can improve myself and take a look at things from a different view.",
-    "My whole quest aa a programmer is to make people's lives easier, and over the past few years, I've integrated Discord heavily into my workflow because of how convenient it makes communicating with my friends and getting help from others.",
+    "My whole quest as a programmer is to make people's lives easier, which is why I started Ilios Labs, and over the past few years, I've integrated Discord heavily into my workflow because of how convenient it makes communicating with my friends and getting help from others.",
     "What projects have I created, you might be asking. Well, I can show you!",
     "I created a Discord Bot that uses an API to compile code and also create pastes using PasteBin. It accepts inputs, over 20 languages, and uses the latest Discord features to make it a great experience.",
     "I can create a simple code snippet here and show you...",
+    "codeconsole.log(\"Hello World!\")",
+    "Now, I can use a context menu to compile this code.",
+    {
+        "type": "command",
+        "bot": "Codetta",
+        "avatar": "https://cdn.discordapp.com/avatars/842011358493016105/c84634b1a1a07b45640ba677d9d4ce3b.png?size=1024",
+        "command": "compile",
+        "response": {
+            "title": "🟢 Accepted",
+            "description": "Code Compiled Successfully!",
+            "thumbnail": "https://images-ext-1.discordapp.net/external/a5ub1aXk_eDv16NQTEotP3tChTksjJ1LvsDLgVAzmRA/https/upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png?width=977&height=977",
+            "fields": [
+                {
+                    "name": "Output",
+                    "value": "Hello World!",
+                    "inline": true,
+                    "inlineIndex": 1
+                },
+                {
+                    "name": "Status",
+                    "value": "Accepted",
+                    "inline": true,
+                    "inlineIndex": 2
+                },
+                {
+                    "name": "Time",
+                    "value": "0.042ms",
+                    "inline": true,
+                    "inlineIndex": 1
+                },
+                {
+                    "name": "Ran in",
+                    "value": "Javascript (Node.js 12.14.0)",
+                    "inline": true,
+                    "inlineIndex": 2
+                },
+                {
+                    "name": "Input",
+                    "value": "None",
+                    "inline": true,
+                    "inlineIndex": 3
+                },
+                {
+                    "name": "Token",
+                    "value": "5d14d6f5-6db3-4436-8473-52ca49a133fc",
+                    "inline": false
+                }
+            ]
+        }
+    },
+    "Check out Codetta at https://github.com/Neesh774/Codetta",
     "That's it! Thank you for staying around to check out this website, and I can't wait to hear your response."
 ]
