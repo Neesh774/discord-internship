@@ -28,7 +28,7 @@ const renderText = (txt) =>
       )
   );
 
-export const NeeshMessage = ({ profile, content, last }) => {
+export const NeeshMessage = ({ profile, content, last, latest }) => {
   useEffect(() => {
     highlight.highlightAll();
   });
@@ -41,6 +41,7 @@ export const NeeshMessage = ({ profile, content, last }) => {
       avatar={content.type === "command" ? content.avatar : profile.avatar}
       roleColor="#2ecc71"
       className={typeof content === 'string' && content.includes("code") ? "code" : ""}
+      id={latest ? "last-sent" : ""}
     >
       {typeof content === "string" ? (
         renderText(content)

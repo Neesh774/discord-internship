@@ -37,7 +37,7 @@ html {
 body, #root {
   display: flex;
   flex: 1 1 auto;
-  background: #36393f;
+  background: #2f3136;
   width: 100%;
   height: 100%;
 }

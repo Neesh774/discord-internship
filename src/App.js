@@ -42,7 +42,7 @@ export default function App() {
     } else {
       if (speed !== -1) {
         new Promise((resolve) => {
-          setTimeout(resolve, 1500 / speed);
+          setTimeout(resolve, 2500 / speed);
         }).then(() => {
           setTyping(true);
           new Promise((resolve) => {
@@ -61,6 +61,9 @@ export default function App() {
   if (!user) {
     return null;
   }
+
+  const lastSent = document.getElementById("last-sent");
+    if(lastSent) lastSent.scrollIntoView();
 
   return (
     <>
@@ -91,6 +94,7 @@ export default function App() {
                     profile={user}
                     key={index}
                     last={index === messages.length - 1}
+                    latest={index === sent.length - 1}
                   />
                 ))}
               </DiscordMessages>
