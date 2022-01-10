@@ -32,7 +32,14 @@
   background-color: #36393f;
 }
 
+@media (max-width: 768px) {
+  .parent {
+    margin: 0;
+  }
+}
+
 .chat {
+  box-shadow:rgba(4, 4, 5, 0.15) 0px 1px 2px 0px;; 
   background-color: #36393f;
   display: flex;
   position: relative;
@@ -190,43 +197,59 @@ span {
   background: #36393f;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
+.chat-header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  justify-content: center;
-  margin-right: 1.5rem;
-  margin-top: 1.5rem;
-  flex-direction: column;
-  gap: 0.5rem;
+  min-width: 0;
+  width: 100%;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 55px;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: default;
+  z-index: 2;
+  color: var(--text-normal);
+  background-color: #36393f;
+  box-sizing: border-box;
+  padding: 0 8px;
+  justify-content: space-between;
+  box-shadow: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
 }
 
-.overlay button {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background-color: #2f3136;
-  border: none;
-  box-shadow: 0 0 0 1px rgba(4, 4, 5, 0.15);
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  margin: 0 8px;
+}
+.toolbar button {
+  position: relative;
+  width: auto;
+  height: 30px;
   cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+  margin: 0 8px;
+  flex: 0 0 auto;
 }
 
-.overlay button:hover:not(.disabled-button) {
-  background-color: #3a3e44;
+.toolbar svg {
+  fill: #dcddde;
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+  display: block;
 }
 
-.overlay svg {
-  fill: #b9bbbe;
-  width: 2rem;
-  height: 2rem;
-}
-
-.overlay .disabled-button {
-  cursor: not-allowed;
-  background-color: #4f545c;
+.toolbar svg:hover {
+  opacity: 1;
 }
 
 .code .discord-message-markup {
@@ -235,4 +258,21 @@ span {
 
 .discord-message-markup {
   font-size: 1.08rem !important;
+}
+
+.channel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.channel svg {
+  color: #72767d;
+}
+
+h3 {
+  color: #fff;
+  font-weight: 600;
+  margin-left: 8px;
+  font-size: 20px;
 }
