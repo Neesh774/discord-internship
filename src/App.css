@@ -249,6 +249,10 @@ span {
   display: block;
 }
 
+.skip svg {
+  fill: #46c46e;
+}
+
 .toolbar svg:hover {
   opacity: 1;
 }
