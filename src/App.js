@@ -85,6 +85,8 @@ export default function App() {
                 ></path>
               </svg>
               <h3>discord-application</h3>
+              <div className="channel-divider" />
+              <span className="channel-desc">Built by Neesh with React</span>
             </div>
             <div className="toolbar">
               <Tooltip content="My Github" direction="bottom" delay="100">

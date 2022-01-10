@@ -63,7 +63,7 @@ export const NeeshMessage = ({ profile, content, last, latest }) => {
           embedTitle={content.response.title}
           thumbnail={content.response.thumbnail}
         >
-          {content.response.description}
+          {renderText(content.response.description)}
           <DiscordEmbedFields slot="fields">
             {content.response.fields.map((field) => (
               <DiscordEmbedField

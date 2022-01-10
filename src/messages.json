@@ -23,7 +23,7 @@
         "command": "compile",
         "response": {
             "title": "🟢 Accepted",
-            "description": "Code Compiled Successfully!",
+            "description": "codeconsole.log(\"Hello World!\")",
             "thumbnail": "https://images-ext-1.discordapp.net/external/a5ub1aXk_eDv16NQTEotP3tChTksjJ1LvsDLgVAzmRA/https/upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png?width=977&height=977",
             "fields": [
                 {

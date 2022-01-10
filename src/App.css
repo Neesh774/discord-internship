@@ -39,7 +39,7 @@
 }
 
 .chat {
-  box-shadow:rgba(4, 4, 5, 0.15) 0px 1px 2px 0px;; 
+  box-shadow: rgba(4, 4, 5, 0.15) 0px 1px 2px 0px;
   background-color: #36393f;
   display: flex;
   position: relative;
@@ -220,7 +220,8 @@ span {
   box-sizing: border-box;
   padding: 0 8px;
   justify-content: space-between;
-  box-shadow: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+  box-shadow: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05),
+    0 2px 0 rgba(4, 4, 5, 0.05);
 }
 
 .toolbar {
@@ -264,6 +265,7 @@ span {
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 40px;
 }
 
 .channel svg {
@@ -275,4 +277,17 @@ h3 {
   font-weight: 600;
   margin-left: 8px;
   font-size: 20px;
+}
+
+.channel-divider {
+  width: 1px;
+  height: 28px;
+  margin: 0 8px;
+  background-color: #ffffff0f;
+}
+
+.channel-desc {
+  line-height: 18px;
+  color: #b9bbbe;
+  font-weight: 500;
 }
