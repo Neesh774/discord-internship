@@ -38,11 +38,11 @@ export default function App() {
       }
     );
     async function sendNewMessages() {
-      await new Promise((resolve) => setTimeout(resolve, 2500));
       setTyping(true);
       await new Promise((resolve) => setTimeout(resolve, 500));
       setTyping(false);
       setSent([...sent, list[sent.length]]);
+      await new Promise((resolve) => setTimeout(resolve, 2500));
     }
     if (sent.length === list.length || finished) {
       setFinished(true);
