@@ -11,6 +11,7 @@ import {
 import highlight from "highlight.js";
 import "highlight.js/styles/base16/solarized-dark.css";
 import { useEffect } from "react";
+import messages from "./messages.json";
 const URL_REGEX =
   /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/;
 const renderText = (txt) =>
@@ -28,7 +29,19 @@ const renderText = (txt) =>
       )
   );
 
-export const NeeshMessage = ({ profile, content, last, latest }) => {
+export const NeeshMessage = ({
+  profile,
+  content,
+  last,
+  latest,
+  prompt,
+  list,
+  setList,
+  prompts,
+  setPrompts,
+  setFinished,
+  setSent
+}) => {
   useEffect(() => {
     highlight.highlightAll();
   });
@@ -37,10 +50,25 @@ export const NeeshMessage = ({ profile, content, last, latest }) => {
   }
   return (
     <DiscordMessage
-      author={content.type === "command" ? content.bot : profile.username}
-      avatar={content.type === "command" ? content.avatar : profile.avatar}
+      author={
+        content.type === "command"
+          ? content.responded
+            ? profile.username
+            : content.user
+          : profile.username
+      }
+      avatar={
+        content.type === "command"
+          ? content.responded
+            ? profile.avatar
+            : content.avatar
+          : profile.avatar
+      }
+      bot={content.bot}
       roleColor="#2ecc71"
-      className={typeof content === 'string' && content.includes("code") ? "code" : ""}
+      className={
+        typeof content === "string" && content.includes("code") ? "code" : ""
+      }
       id={latest ? "last-sent" : ""}
     >
       {typeof content === "string" ? (
@@ -48,8 +76,8 @@ export const NeeshMessage = ({ profile, content, last, latest }) => {
       ) : content.type === "command" ? (
         <DiscordCommand
           slot="reply"
-          author={profile.username}
-          avatar={profile.avatar}
+          author={content.responded ? content.user : profile.username}
+          avatar={content.responded ? content.avatar : profile.avatar}
           roleColor="#2ecc71"
           command={content.command}
         ></DiscordCommand>
@@ -78,7 +106,7 @@ export const NeeshMessage = ({ profile, content, last, latest }) => {
           </DiscordEmbedFields>
         </DiscordEmbed>
       ) : (
-        ""
+        <span>{content.response}</span>
       )}
       {last ? (
         <DiscordAttachments>
@@ -87,8 +115,6 @@ export const NeeshMessage = ({ profile, content, last, latest }) => {
               type="primary"
               onClick={() => {
                 var link = document.createElement("a");
-                // If you don't know the name or want to use
-                // the webserver default set name = ''
                 link.setAttribute("download", "Kanishq's_Cover_Letter.pdf");
                 link.href = "/Discord_Internship_Cover_Letter.pdf";
                 document.body.appendChild(link);
@@ -107,6 +133,28 @@ export const NeeshMessage = ({ profile, content, last, latest }) => {
             <DiscordButton url="https://www.linkedin.com/in/kanishqk/">
               LinkedIn
             </DiscordButton>
+          </DiscordActionRow>
+        </DiscordAttachments>
+      ) : (
+        ""
+      )}
+      {prompt ? (
+        <DiscordAttachments>
+          <DiscordActionRow>
+            {prompts.map((q, i) => (
+              <DiscordButton
+                type="primary"
+                key={q.id}
+                onClick={() => {
+                  setList([...list, ...messages[`${i}`]]);
+                  setPrompts([...prompts.slice(0, i), ...prompts.slice(i + 1)]);
+                  setFinished(false);
+                  setSent(list);
+                }}
+              >
+                {q}
+              </DiscordButton>
+            ))}
           </DiscordActionRow>
         </DiscordAttachments>
       ) : (
