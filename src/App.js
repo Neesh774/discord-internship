@@ -276,11 +276,3 @@ const parseDate = () => {
     monthNames[date.getMonth()]
   } ${date.getDate()}, ${date.getFullYear()}`;
 };
-
-const totalMessages = () => {
-  let result = 0;
-  messages.questions.forEach((m, i) => {
-    result += messages[i].length;
-  })
-  return result;
-}
