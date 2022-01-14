@@ -1,4 +1,5 @@
-[
+{
+  "old": [
     "Hey! I'm Kanishq, a 16 year old high school student that loves programming.",
     "Some more info about me: I'm male and I was born in India, but I currently live in the US.",
     "I'm currently a junior in high school, but I spend most of my free time either working on Ilios Labs or chatting with my friends on Discord.",
@@ -17,52 +18,53 @@
     "codeconsole.log(\"Hello World!\")",
     "Now, I can use a context menu to compile this code.",
     {
-        "type": "command",
-        "bot": "Codetta",
-        "avatar": "https://cdn.discordapp.com/avatars/842011358493016105/c84634b1a1a07b45640ba677d9d4ce3b.png?size=1024",
-        "command": "compile",
-        "response": {
-            "title": "🟢 Accepted",
-            "description": "codeconsole.log(\"Hello World!\")",
-            "thumbnail": "https://images-ext-1.discordapp.net/external/a5ub1aXk_eDv16NQTEotP3tChTksjJ1LvsDLgVAzmRA/https/upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png?width=977&height=977",
-            "fields": [
-                {
-                    "name": "Output",
-                    "value": "Hello World!",
-                    "inline": true,
-                    "inlineIndex": 1
-                },
-                {
-                    "name": "Status",
-                    "value": "Accepted",
-                    "inline": true,
-                    "inlineIndex": 2
-                },
-                {
-                    "name": "Time",
-                    "value": "0.042ms",
-                    "inline": true,
-                    "inlineIndex": 1
-                },
-                {
-                    "name": "Ran in",
-                    "value": "Javascript (Node.js 12.14.0)",
-                    "inline": true,
-                    "inlineIndex": 2
-                },
-                {
-                    "name": "Input",
-                    "value": "None",
-                    "inline": true,
-                    "inlineIndex": 3
-                },
-                {
-                    "name": "Token",
-                    "value": "5d14d6f5-6db3-4436-8473-52ca49a133fc",
-                    "inline": false
-                }
-            ]
-        }
+      "type": "command",
+      "bot": true,
+      "user": "Codetta",
+      "avatar": "https://cdn.discordapp.com/avatars/842011358493016105/c84634b1a1a07b45640ba677d9d4ce3b.png?size=1024",
+      "command": "compile",
+      "response": {
+        "title": "🟢 Accepted",
+        "description": "codeconsole.log(\"Hello World!\")",
+        "thumbnail": "https://images-ext-1.discordapp.net/external/a5ub1aXk_eDv16NQTEotP3tChTksjJ1LvsDLgVAzmRA/https/upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png?width=977&height=977",
+        "fields": [
+          {
+            "name": "Output",
+            "value": "Hello World!",
+            "inline": true,
+            "inlineIndex": 1
+          },
+          {
+            "name": "Status",
+            "value": "Accepted",
+            "inline": true,
+            "inlineIndex": 2
+          },
+          {
+            "name": "Time",
+            "value": "0.042ms",
+            "inline": true,
+            "inlineIndex": 1
+          },
+          {
+            "name": "Ran in",
+            "value": "Javascript (Node.js 12.14.0)",
+            "inline": true,
+            "inlineIndex": 2
+          },
+          {
+            "name": "Input",
+            "value": "None",
+            "inline": true,
+            "inlineIndex": 3
+          },
+          {
+            "name": "Token",
+            "value": "5d14d6f5-6db3-4436-8473-52ca49a133fc",
+            "inline": false
+          }
+        ]
+      }
     },
     "Check out Codetta at https://github.com/Neesh774/Codetta",
     "That's just an example of something cool that I've made, but I've also made some really cool websites and programs, like https://bubble.ilioslabs.dev, and this one.",
@@ -82,4 +84,64 @@
     "Please feel free to email me, call/text me, or send me a DM to ツCheesyNeeshツ#5076 if you have any questions or concerns.",
     "TLDR: I'm looking to apply for an internship at Discord because I have a lot of experience with full stack development, I'm interested in creating tools for developers, and I want to help improve the single app that's kept me sane through the pandemic.",
     "That's it! Thank you for staying around to check out this website, and I can't wait to hear your response."
-]
+  ],
+  "initial": [
+    "Hey! I'm Kanishq, a 16 year old high school student that loves programming.",
+    "Some more info about me: I'm male and I was born in India, but I currently live in the US.",
+    "I'm currently a junior in high school, but I spend most of my free time either working on Ilios Labs or chatting with my friends on Discord.",
+    "Some of my other hobbies include playing ping pong, leading the programmers of my FRC robotics club, and learning about science and technology.",
+    "I also work as a web developer for a learning center near me, and I'm the primary maintainer for their website.",
+    "I'm currently looking for a programming position at Discord because I'm a huge fan of the community and I want to help make it a better place for everyone.",
+    "To get a download of my cover letter, press the skip button on the top right and press the 'Download' button. To view my resume, check out my personal website at https://neesh.ilioslabs.dev/resume"
+  ],
+  "prompt": "What would you like to know?",
+  "questions": [
+    "Why I should be chosen",
+    "How Discord has impacted me",
+    "What I would do at Discord"
+  ],
+  "0": [
+    {
+      "type": "command",
+      "user": "You",
+      "avatar": "https://cdn.discordapp.com/attachments/834443815205077032/931556030834434078/discord-avatar-512-0D7XS.png",
+      "command": "Why I should be chosen",
+      "response": "So...why do I think I'm fit for a company like Discord? Well, for starters, I've been programming for over 7 years, trying new languages like Python, Javascript, and HTML/CSS.",
+      "responded": true
+    },
+    "Now, that might not be too impressive on its own but I've taught them all to myself using online courses and creating projects to jump right into the language, which you can see on my Github.",
+    "I love solving difficult problems and overcoming those kinds of obstacles in my projects",
+    "I'm also a team worker. I hate working on things alone and I'm always looking for feedback or criticism from others so I can improve myself and take a look at things from a different view.",
+    "My whole quest as a programmer is to make people's lives easier, which is why I started Ilios Labs, and over the past few years, I've integrated Discord heavily into my workflow because of how convenient it makes communicating with my friends and getting help from others."
+  ],
+  "1": [
+    {
+      "type": "command",
+      "user": "You",
+      "avatar": "https://cdn.discordapp.com/attachments/834443815205077032/931556030834434078/discord-avatar-512-0D7XS.png",
+      "command": "How Discord has impacted me",
+      "response": "This may seem like an exaggeration, but Discord honestly started my quest to become a developer",
+      "responded": true
+    },
+    "I've always wanted to find a career in computer science, but being on Discord made me want to actively start working on my own projects and learning more about developing",
+    "In February of 2021, I watched a video by this youtuber, Polymars, and it genuinely inspired something within me. I realized how much I could do with Java, the only language I knew at that point, and I was really excited to make my own Discord Bot",
+    "Before that, I had only known Java from online classes, but I was finally motivated to do my own thing.",
+    "The discovery that it was that easy to create something with my code and help people was super motivating and it essentially just snowballed from there, leading me to the place where I am now",
+    "I'd like to think that this story is not only my developing \"origin story\", but it also goes to show how much I've learned in just one year of actively developing."
+  ],
+  "2": [
+    {
+      "type": "command",
+      "user": "You",
+      "avatar": "https://cdn.discordapp.com/attachments/834443815205077032/931556030834434078/discord-avatar-512-0D7XS.png",
+      "command": "What I would do at Discord",
+      "response": "I've used Discord for just over 4 years now, and along the way, I've met a lot of new people and learned a lot about the app itself.",
+      "responded": true
+    },
+    "I have a lot of ideas for things I'd be able to help Discord with and where some of its shortcomings are.",
+    "If I was selected for the position, I'd be able to come up with creative ideas and I could help implement features that the community really wants, whether it's for all of Discord or just the developers.",
+    "One of the ways I think Discord could be improved is in decreasing the learning curve required to begin using Discord. I have a lot of friends that try to use Discord because they know how popular it is, but it just takes too long for them to get acclimated to the UI and understand what features are available to them.",
+    "Another thing I would like to work on is making the developer documentation easier to understand, and perhaps adding examples of using certain features."
+  ],
+  "finished": "That's it! Thank you for staying around to check out this website, and I can't wait to hear your response."
+}

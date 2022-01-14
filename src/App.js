@@ -12,6 +12,8 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(false);
   const [sent, setSent] = useState([]);
+  const [list, setList] = useState(messages.initial);
+  const [prompts, setPrompts] = useState(messages.questions);
   const [typing, setTyping] = useState(false);
   const [finished, setFinished] = useState(false);
 
@@ -35,26 +37,21 @@ export default function App() {
         }
       }
     );
-    if (sent.length === messages.length || finished) {
+    async function sendNewMessages() {
+      await new Promise((resolve) => setTimeout(resolve, 2500));
+      setTyping(true);
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      setTyping(false);
+      setSent([...sent, list[sent.length]]);
+    }
+    if (sent.length === list.length || finished) {
       setFinished(true);
-      setSent(messages);
+      setSent(list);
       setTyping(false);
     } else {
-      new Promise((resolve) => {
-        setTimeout(resolve, 2500);
-      }).then(() => {
-        setTyping(true);
-        new Promise((resolve) => {
-          setTimeout(resolve, 500);
-        }).then(() => {
-          if (!finished) {
-            setSent([...sent, messages[sent.length]]);
-            setTyping(false);
-          }
-        });
-      });
+      sendNewMessages();
     }
-  }, [sent, finished]);
+  }, [sent, finished, list]);
 
   if (!user) {
     return null;
@@ -178,10 +175,47 @@ export default function App() {
                     content={message}
                     profile={user}
                     key={index}
-                    last={index === messages.length - 1}
+                    last={false}
                     latest={index === sent.length - 1}
+                    prompt={false}
+                    list={list}
+                    setList={setList}
+                    prompts={prompts}
+                    setPrompts={setPrompts}
+                    setFinished={setFinished}
+                    setSent={setSent}
                   />
                 ))}
+                {sent.length === list.length && (
+                  <NeeshMessage
+                    content={messages.prompt}
+                    profile={user}
+                    last={false}
+                    latest={true}
+                    prompt={true}
+                    list={list}
+                    setList={setList}
+                    prompts={prompts}
+                    setPrompts={setPrompts}
+                    setFinished={setFinished}
+                    setSent={setSent}
+                  />
+                )}
+                {finished && prompts.length < 1 && (
+                  <NeeshMessage
+                    content={messages.finished}
+                    profile={user}
+                    last={true}
+                    latest={true}
+                    prompt={false}
+                    list={list}
+                    setList={setList}
+                    prompts={prompts}
+                    setPrompts={setPrompts}
+                    setFinished={setFinished}
+                    setSent={setSent}
+                  />
+                )}
               </DiscordMessages>
             </div>
           </div>
