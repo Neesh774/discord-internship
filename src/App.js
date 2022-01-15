@@ -46,7 +46,7 @@ export default function App() {
     }
     if (sent.length === list.length || finished) {
       setFinished(true);
-      setSent([...messages.initial, ...messages[0], ...messages[1], messages[2], ...messages[3]]);
+      setSent(list);
       setTyping(false);
     } else {
       sendNewMessages();
