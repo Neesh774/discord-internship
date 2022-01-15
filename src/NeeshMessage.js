@@ -144,15 +144,15 @@ export const NeeshMessage = ({
             {prompts.map((q, i) => (
               <DiscordButton
                 type="primary"
-                key={q.id}
+                key={i}
                 onClick={() => {
-                  setList([...list, ...messages[`${i}`]]);
+                  setList([...list, ...messages[q.id]]);
                   setPrompts([...prompts.slice(0, i), ...prompts.slice(i + 1)]);
                   setFinished(false);
                   setSent(list);
                 }}
               >
-                {q}
+                {q.question}
               </DiscordButton>
             ))}
           </DiscordActionRow>

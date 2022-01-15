@@ -186,7 +186,7 @@ export default function App() {
                     setSent={setSent}
                   />
                 ))}
-                {sent.length === list.length && (
+                {sent.length === list.length && prompts.length > 0 && (
                   <NeeshMessage
                     content={messages.prompt}
                     profile={user}
