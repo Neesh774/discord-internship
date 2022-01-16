@@ -38,9 +38,9 @@ export default function App() {
       }
     );
     async function sendNewMessages() {
-      await new Promise((resolve) => setTimeout(resolve, 2500));
+      await new Promise((resolve) => setTimeout(resolve, 2900));
       setTyping(true);
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 700));
       setTyping(false);
       setSent([...sent, list[sent.length]]);
     }
